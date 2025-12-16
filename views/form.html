@@ -1,0 +1,14 @@
+<form ng-submit="save()">
+  <label>Nama</label><br />
+  <input type="text" ng-model="employee.name" required /><br /><br />
+
+  <label>Posisi</label><br />
+  <input type="text" ng-model="employee.position" /><br /><br />
+
+  <label>Gaji</label><br />
+  <input type="number" ng-model="employee.salary" required /><br /><br />
+
+  <button type="submit">{{ isEdit ? "Update" : "Save" }}</button>
+
+  <a href="#!/employees">Cancel</a>
+</form>
