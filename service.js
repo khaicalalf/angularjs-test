@@ -7,3 +7,9 @@ app.service("EmployeeService", function ($http) {
   this.update = (id, data) => $http.put(`${BASE_URL}/${id}`, data);
   this.delete = (id) => $http.delete(`${BASE_URL}/${id}`);
 });
+
+app.service("DepartmentService", function ($http) {
+  const BASE_URL = "http://localhost:3000/api/departments";
+
+  this.getAll = () => $http.get(BASE_URL);
+});

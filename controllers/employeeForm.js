@@ -1,8 +1,19 @@
 app.controller(
   "EmployeeForm",
-  function ($scope, $routeParams, $location, EmployeeService) {
+  function (
+    $scope,
+    $routeParams,
+    $location,
+    EmployeeService,
+    DepartmentService
+  ) {
     $scope.employee = {};
+    $scope.departments = [];
     $scope.isEdit = false;
+
+    DepartmentService.getAll().then((res) => {
+      $scope.departments = res.data;
+    });
 
     if ($routeParams.id) {
       $scope.isEdit = true;

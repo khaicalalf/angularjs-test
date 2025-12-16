@@ -8,6 +8,16 @@
   <label>Gaji</label><br />
   <input type="number" ng-model="employee.salary" required /><br /><br />
 
+  <label>Department</label><br />
+  <select
+    ng-model="employee.DepartmentID"
+    ng-options="d.DepartmentID as d.DepartmentName for d in departments"
+    required
+  >
+    <option value="">-- Pilih Department --</option>
+  </select>
+  <br /><br />
+
   <button type="submit">{{ isEdit ? "Update" : "Save" }}</button>
 
   <a href="#!/employees">Cancel</a>
