@@ -8,9 +8,9 @@ app.service("EmployeeService", function ($http) {
     },
   };
 
-  this.getAll = () => $http.get(BASE_URL, config);
+  this.getAll = () => $http.get(BASE_URL);
 
-  this.getById = (id) => $http.get(`${BASE_URL}/${id}`, config);
+  this.getById = (id) => $http.get(`${BASE_URL}/${id}`);
 
   this.create = (data) => $http.post(BASE_URL, data, config);
 
